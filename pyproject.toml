@@ -12,7 +12,7 @@ dependencies = [
   "numpy>=1.26,<3",
   "scikit-learn>=1.4,<1.7",
   "mlflow>=2.12,<3",
-  "sqlalchemy>=2.0,<2.1",
+  "sqlalchemy>=2.0,<2.2",
   "psycopg[binary,pool]>=3.1,<4",
   "prometheus-client>=0.20,<1",
 ]
