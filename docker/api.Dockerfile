@@ -4,7 +4,7 @@ ARG UV_VERSION=0.8.0
 FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
 
 # Stage 1: install dependencies and build the Python environment.
-FROM python:3.11-slim-bookworm AS builder
+FROM python:3.15-slim-bookworm AS builder
 COPY --from=uv /uv /bin/uv
 
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
@@ -18,7 +18,7 @@ COPY src ./src
 RUN uv sync --frozen --no-dev --no-editable
 
 # Stage 2: final lightweight image.
-FROM python:3.11-slim-bookworm
+FROM python:3.15-slim-bookworm
 
 RUN useradd --create-home --uid 1000 app
 WORKDIR /app

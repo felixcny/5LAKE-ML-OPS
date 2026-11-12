@@ -3,7 +3,7 @@
 ARG UV_VERSION=0.8.0
 FROM ghcr.io/astral-sh/uv:${UV_VERSION} AS uv
 
-FROM python:3.11-slim-bookworm
+FROM python:3.15-slim-bookworm
 
 # Java is required by Spark.
 RUN apt-get update \
